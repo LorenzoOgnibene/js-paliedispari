@@ -12,12 +12,26 @@ function getRandomNumber(numMin, numMax){
     return randomNumber;
 }
 
-function isOdd(num){
+function isOddOrEven(num){
     if(num % 2 === 1){
-        return true;
+        return 'dispari';
     }
-    return false;
+    return 'è pari';
 }
 
 const userChoice = prompt('scegli pari o dispari');
-const userNumber = parseInt(prompt('inserisci il tuo numero'), 10);
+const userNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
+const computerNumber = getRandomNumber(1, 5);
+let sum = computerNumber + userNumber;
+const OddOrEven = isOddOrEven(sum);
+
+console.log('io ho scelto ' + computerNumber);
+console.log('tu hai scelto ' + userChoice  + " " + userNumber);
+
+if(OddOrEven === 'dispari' && userChoice == 'dispari'){
+    console.log('HAI VINTOOOO');
+}else if (OddOrEven === 'è pari' && userChoice == 'pari'){
+    console.log('HAI VINTOOOO');
+}else{
+    console.log('HO VINTO IOO')
+}
